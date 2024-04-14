@@ -1,7 +1,7 @@
 """Create a cross reference table with novelWriter metadata.
 
 usage: 
-nw_meta sourceFolder
+nw_meta.py sourceFolder
 
 Positional arguments:
     sourceFolder -- Path to the novelWriter project folder.
