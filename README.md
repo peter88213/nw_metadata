@@ -1,4 +1,4 @@
-# Create a cross reference table with novelWriter metadata.
+# Create a table with novelWriter metadata.
 
 
 ## Requirements
@@ -13,7 +13,7 @@ Save the file [nw_meta.py](https://raw.githubusercontent.com/peter88213/nw_metad
 
 ## Output
 
-The cross reference table is exported as a csv file.
+The metadata table is exported as a csv file.
 
 ```
          , key 1, key 2, ... key n

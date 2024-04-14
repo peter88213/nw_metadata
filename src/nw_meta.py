@@ -1,4 +1,4 @@
-"""Create a cross reference table with novelWriter metadata.
+"""Create a table with novelWriter metadata.
 
 usage: 
 nw_meta.py sourceFolder
@@ -17,7 +17,7 @@ import sys
 
 
 def read_nw(sourceFolder: str) -> list[list[str]]:
-    """Return a metadata cross reference table.
+    """Return a metadata table.
     
     Table structure: 
     [
@@ -40,6 +40,7 @@ def read_nw(sourceFolder: str) -> list[list[str]]:
     for nvFile in glob.iglob(f'{sourceFolder}/content/*.nwd'):
         with open(nvFile.replace('\\', '/'), 'r', encoding='utf-8') as f:
             lines = f.read().split('\n')
+        heading = None
         for line in lines:
             if line.startswith('#'):
                 i = 0
@@ -48,7 +49,10 @@ def read_nw(sourceFolder: str) -> list[list[str]]:
                     i += 1
                     heading = f'{line} ({i})'
                 headings[heading] = {}
-            elif line.startswith('@'):
+            elif heading is None:
+                continue
+
+            elif line.startswith('@') or line.startswith('%'):
                 metadata = line.split(':', maxsplit=1)
                 metaKey = metadata[0].strip()
                 if not metaKey in metaKeys:
