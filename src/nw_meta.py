@@ -36,9 +36,21 @@ def read_nw(sourceFolder: str) -> list[list[str]]:
     headings: dict[str, dict[str, str]] = {}
     metaKeys: list[str] = []
 
-    # TODO: Sort the .nwd files, if structure data is available.
-    for nvFile in glob.iglob(f'{sourceFolder}/content/*.nwd'):
-        with open(nvFile.replace('\\', '/'), 'r', encoding='utf-8') as f:
+    nwdFiles = []
+    try:
+        with open(f'{sourceFolder}/ToC.txt', 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+        print('Reading table of contents ...')
+        for line in lines:
+            if line.startswith('content/'):
+                nwdFiles.append(os.path.join(sourceFolder, line.split(' ')[0]))
+    except:
+        print('Could not read table of contents. Using file system order.')
+        nwdFiles = glob.glob(f'{sourceFolder}/content/*.nwd')
+
+    print('Reading nwd files ...')
+    for nwdFile in nwdFiles:
+        with open(nwdFile.replace('\\', '/'), 'r', encoding='utf-8') as f:
             lines = f.read().split('\n')
         heading = None
         for line in lines:
