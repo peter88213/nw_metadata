@@ -1,17 +1,11 @@
 # Create a table with novelWriter metadata.
 
 
-## Requirements
+## Features
 
-- A Python installation (version 3.6 or newer).
-
-
-## Download
-
-Save the file [nw_meta.py](https://raw.githubusercontent.com/peter88213/nw_metadata/main/src/nw_meta.py).
-
-
-## Output
+This Python script searches a [novelWriter](https://novelwriter.io/) project for
+tags, references, comments, and synopses. It creates a table with a row for 
+each heading, and a column for each metadata category.
 
 The metadata table is exported as a csv file.
 
@@ -24,6 +18,16 @@ heading 1, value, value, ... value
 heading m, value, value, ... value   
 
 ```
+
+## Requirements
+
+- A Python installation (version 3.6 or newer).
+
+
+## Download
+
+Save the file [nw_meta.py](https://raw.githubusercontent.com/peter88213/nw_metadata/main/src/nw_meta.py).
+
 
 ## Usage
 
