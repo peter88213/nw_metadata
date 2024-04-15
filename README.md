@@ -5,7 +5,7 @@
 
 This Python script searches a [novelWriter](https://novelwriter.io/) project for
 tags, references, comments, and synopses. It creates a table with a row for 
-each heading, and a column for each metadata category.
+each heading, and a column for each metadata key.
 
 The metadata table is exported as a csv file.
 
