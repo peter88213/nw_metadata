@@ -1,4 +1,4 @@
-# Create a table with novelWriter metadata.
+# Export a table with novelWriter metadata.
 
 
 ![Metadate table in LibreOffice](docs/Screenshots/screen01.png)
