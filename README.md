@@ -1,6 +1,8 @@
 # Create a table with novelWriter metadata.
 
 
+![Metadate table in LibreOffice](docs/Screenshots/screen01.png)
+
 ## Features
 
 This Python script searches a [novelWriter](https://novelwriter.io/) project for
